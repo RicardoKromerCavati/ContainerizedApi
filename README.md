@@ -1,7 +1,6 @@
 # ContainerizedApi
 This project was used as a study case to understand how to run a .NET API in a Docker container.  
-A simple API was developed following this [tutorial](https://awswith.net/2021/11/01/running-asp-net-minimal-apis-with-docker/) and a class from my postgraduate course.
-Along with a Dockerfile to create an image and run it.
+A simple API was developed following this [tutorial](https://awswith.net/2021/11/01/running-asp-net-minimal-apis-with-docker/) and a class from my postgraduate course, along with a Dockerfile to create an image and run it.
 
 ## How to run it?
 When you have all the files of the repository, you need to execute the following commands:
