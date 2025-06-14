@@ -1,6 +1,10 @@
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 WebApplication app = builder.Build();
 
-app.MapGet("/greeting", () => "Hello from API running in Docker container :)");
+app.MapGet("/", () => "Hello world?");
 
-app.Run("http://*:80");
+app.MapGet("/greeting", () => "GET Hello from API running in Docker container :)");
+
+app.MapPost("/newGreeting", () => "POST Hello from API running in Docker container :)");
+
+app.Run("http://0.0.0.0:8080");
