@@ -25,7 +25,7 @@ After a successful execution, you can validate the creation of your new image wi
 docker image ls
 ```
 
-![images on my computer](./docker_image_ls_result.png)
+![images on my computer](./images/docker_image_ls_result.png)
 
 With the image in hands, we can start a container with it, do it the following command needs to be executed:
 
@@ -61,16 +61,16 @@ With following command you can validate your container is running.
 docker ps
 ```
 
-![docker_ps_result](./docker_ps_result.png)
+![docker_ps_result](./images/docker_ps_result.png)
 
 After that you can execute a http GET on one of the endpoints.
 
 Like this:
 
-![get_example_1](./get_example_1.png)
+![get_example_1](./images/get_example_1.png)
 
 And this:
 
-![get_example_2](./get_example_2.png)
+![get_example_2](./images/get_example_2.png)
 
 This is it!
