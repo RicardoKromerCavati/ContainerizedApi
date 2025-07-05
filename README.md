@@ -1,4 +1,7 @@
 # ContainerizedApi
+
+## How to create images and execute them (2025-14-06)
+
 This project was used as a study case to understand how to run a .NET API in a Docker container.  
 A simple API was developed following this [tutorial](https://awswith.net/2021/11/01/running-asp-net-minimal-apis-with-docker/) and a class from my postgraduate course, along with a Dockerfile to create an image and run it.
 
@@ -73,3 +76,64 @@ And this:
 ![get_example_2](./images/get_example_2.png)
 
 This is it!
+
+## How to push your image to Docker Hub (2025-07-05) 
+When you have your image at hand, you can publish it to one of your Docker Hub repositories.
+
+First of all, you need to login to docker, you can do that by using the command.
+
+```
+docker login
+```
+
+You should see something like this, your default browser will open the specified url, if not, simply open the specified url on your browser, there you should only need to write the code shown on your console.
+
+![docker_login](./images/docker_login.png)
+
+When the login succeeds, you will see the message "Login Succeeded".
+
+In order to push your image, you need to create a repository on Docker Hub and your image must have the same same name specified in the repo.  
+
+You can check this information on the General page of your repository, my repository is called ```ricardokcavati/containerizedapi```, so I need to rename my image to match this, you can do this with the following command.
+
+```
+docker tag [old_name]:[tag] [image_name_on_repository]:[tag]
+```
+
+I executed the command the following values.
+
+```
+docker tag my_containerized_api:latest ricardokcavati/containerizedapi:latest
+```
+
+After that, you can simply push your image to the repository with the following command (I used the example that appears on the top-right corner of the General page of the repository).
+
+```
+docker push ricardokcavati/containerizedapi:tagname
+```
+
+The command I actually executed only specified the tag as 'latest'.
+
+```
+docker push ricardokcavati/containerizedapi:latest
+```
+
+The result of the command should be the following.
+
+![push_images](./images/push_images.png)
+
+And you should be able to able to see it on the repository like this.
+
+![docker_hub](./images/docker_hub.png)
+
+## My Docker Hub
+
+A few days after the creation of the project, I included a ci pipeline to build the application, log in on Docker Hub and push the image to my repository.
+
+The image for the container can be obtained in this [repository](https://hub.docker.com/r/ricardokcavati/containerizedapi).
+
+And you can pull the image the following command.
+
+```
+docker pull ricardokcavati/containerizedapi:latest
+```
