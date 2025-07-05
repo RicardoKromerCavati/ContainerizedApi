@@ -25,3 +25,10 @@ jobs:
       with:
         username: ricardokcavati
         password: ${{ secrets.DOCKERHUB }}
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v6.18.0
+      with:
+        context: . #searches for Docker file in the root directory
+        tags: 'latest'
+        push: true
